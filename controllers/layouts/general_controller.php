@@ -24,6 +24,12 @@
         public function footer()
         {
             $vendorsAddViewModel = new View_Model('layouts/general_footer');
+
+            // Get the current date from the date class
+            $dateClass = new date_class();
+            $currentDate = $dateClass->getCurrentDate();
+            $vendorsAddViewModel->assign('current_date' , $currentDate);
+
             $vendorsAddViewModel->render();
         }
     }

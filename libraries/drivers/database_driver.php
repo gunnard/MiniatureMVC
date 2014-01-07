@@ -3,7 +3,7 @@
      * The Database Library serves as an interface for the database drivers
      */
 
-    abstract class Database_Library
+    abstract class Database_Driver
     {
         abstract protected function connect($connectionInfo);
         abstract protected function disconnect();

@@ -3,7 +3,7 @@
 
         <footer>
             <div style="border-style:solid; border-width: 2px;">
-                <h2>Footer</h2>
+                <h2>Footer (<?php echo $data['current_date']; ?>)</h2>
             </div>
         </footer>
 

@@ -25,9 +25,9 @@
                 $folder = 'models/';
                 break;
 
-            case 'library':
+            case 'class':
 
-                $folder = 'libraries/';
+                $folder = 'libraries/classes/';
                 break;
 
             case 'driver':

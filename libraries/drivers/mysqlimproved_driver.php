@@ -3,7 +3,7 @@
     /**
      * The MySQL Improved driver extends the Database_Library to provide interaction with a MySQL database
      */
-    class MysqlImproved_Driver extends Database_Library
+    class MysqlImproved_Driver extends Database_Driver
     {
         /**
          * Connection holds MySQLi resource
