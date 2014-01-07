@@ -7,6 +7,7 @@
     */
 
     $section = $_GET['section'];
+    $subSection = $_GET['subsection'];
 
     $params = null;
     if (isset($_GET["action"]))
@@ -22,12 +23,12 @@
     }
 
     // Get the name of the controller class
-    $myClassName = $section . "_controller";
+    $myClassName = $section . '_' . $subSection .  "_controller";
 
     // Instantiate the class with the dynamic class name
     $controller = new $myClassName($dataConnection);
 
     // Once we have the controller instantiated, execute the default function
     // Pass any GET variables to the main method
-    $controller->main($params);
+    $controller->callAction($params);
 ?>

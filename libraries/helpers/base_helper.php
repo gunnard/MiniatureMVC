@@ -16,3 +16,21 @@
             die();
         }
     }
+
+    /**
+     * Return yes if the string contains the substring
+     * @param $string
+     * @param $substring
+     * @return bool
+     */
+    function stringContains($string, $substring)
+    {
+        if (strpos($string, $substring) !== false)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }

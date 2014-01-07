@@ -29,6 +29,7 @@ Options +ExecCGI +FollowSymLinks
 #Require valid-user
 
 RewriteEngine on
-RewriteRule ^([^/\.]+)/([^/\.]+)/?$ index.php?section=$1&action=$2 [L]
-RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ index.php?section=$1&action=$2&p1=$3 [L]
-RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ index.php?section=$1&action=$2&p1=$3&p2=$4 [L]
+RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ index.php?section=$1&subsection=$2&action=$3 [L]
+RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ index.php?section=$1&subsection=$2&action=$3&p1=$4 [L]
+RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ index.php?section=$1&subsection=$2&action=$3&p1=$4&p2=$5 [L]
+RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ index.php?section=$1&subsection=$2&action=$3&p1=$4&p2=$5&p3=$6 [L]

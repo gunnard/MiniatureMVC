@@ -5,6 +5,7 @@
 
     class Master_model
     {
+        /* @var $dataConnection Mysqlimproved_driver */
         protected $dataConnection;
 
         public function __construct($dataConnection)

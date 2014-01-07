@@ -1,13 +1,12 @@
 <?php
 
     /**
-    * Entry point
+    * Entry point of the application
     */
 
-    // Define root path that will be used to include files (future-proofing)
-    define('SERVER_ROOT' , '');
-    define('ROOT_URL', "http://" . $_SERVER["SERVER_NAME"] . "/MiniatureMVC");
+    // Defines in which folder we are inside www
+    define('ROOT_URL', "/MiniatureMVC/");
 
-    require_once(SERVER_ROOT . 'config.php');
-    require_once(SERVER_ROOT . 'router.php');
+    require_once('config.php');
+    require_once('router.php');
 ?>

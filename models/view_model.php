@@ -17,9 +17,9 @@ class View_Model
     /**
      * Accepts a template to load
      */
-    public function __construct($template)
+    public function __construct($view)
     {
-        $file = SERVER_ROOT . 'views/' . strtolower($template . '_' . 'view') . '.php';
+        $file = 'views/' . strtolower($view . '_' . 'view') . '.php';
 
         if (file_exists($file))
         {
@@ -53,7 +53,7 @@ class View_Model
         // Parse data variables into local variables
         $data = $this->data;
 
-        // Get template
+        // Get view
         include($this->render);
 
         // Get the contents of the buffer and return it

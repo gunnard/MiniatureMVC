@@ -5,11 +5,12 @@
 
     abstract class Database_Library
     {
-        abstract protected function connect();
+        abstract protected function connect($connectionInfo);
         abstract protected function disconnect();
         abstract protected function prepare($query, $params = null);
-        abstract protected function execute($fetch = true);
-        abstract protected function fetch($type = 'object', $singleResult = false);
+        abstract protected function execute();
+        abstract protected function fetch($type = 'array', $singleResult = false);
+        abstract protected function getLastInsertId();
     }
 
 ?>
