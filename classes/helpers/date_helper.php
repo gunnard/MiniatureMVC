@@ -3,7 +3,7 @@
     /**
      * Provides extended methods in relation to dates
      */
-    class Date_Class
+    class Date_Helper
     {
         protected $defaultDateFormat = "Y-m-d";
 

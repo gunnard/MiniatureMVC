@@ -9,10 +9,9 @@
     ini_set('display_errors', '1');
 
     require_once('autoload.php'); // Autoload classes in their respective root directory
-    require_once('libraries/helpers/base_helper.php'); // Base functions
+    require_once('classes/helpers/base_helper.php'); // Base functions
 
     // Database connection
-
     $connectionInfo = array(
         "host" => "127.0.0.1",
         "user" => "root",

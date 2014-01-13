@@ -12,10 +12,10 @@
 
         <!-- Javascript -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="<?php echo ROOT_URL; ?>/javascript/libraries/jquery-2.0.3.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="<?php echo ROOT_URL; ?>/libraries/javascript/jquery-2.0.3.min.js"><\/script>')</script>
 
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-        <script>jQuery.ui || document.write('<script src="<?php echo ROOT_URL; ?>/javascript/libraries/jquery-ui-1.10.3.min.js"><\/script>')</script>
+        <script>jQuery.ui || document.write('<script src="<?php echo ROOT_URL; ?>/libraries/javascript/jquery-ui-1.10.3.min.js"><\/script>')</script>
 
     </head>
 

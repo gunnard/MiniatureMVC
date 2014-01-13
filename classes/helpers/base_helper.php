@@ -1,6 +1,10 @@
 <?php
 
     /**
+     * This is only for very common functions that can be used directly by the application
+     */
+
+    /**
      * Display object content properly and die if requested
      * @param $object
      * @param bool $kill

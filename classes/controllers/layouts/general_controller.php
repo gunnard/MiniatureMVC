@@ -26,8 +26,8 @@
             $vendorsAddViewModel = new View_Model('layouts/general_footer');
 
             // Get the current date from the date class
-            $dateClass = new date_class();
-            $currentDate = $dateClass->getCurrentDate();
+            $dateHelper = new date_helper();
+            $currentDate = $dateHelper->getCurrentDate();
             $vendorsAddViewModel->assign('current_date' , $currentDate);
 
             $vendorsAddViewModel->render();

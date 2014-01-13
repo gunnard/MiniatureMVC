@@ -17,23 +17,26 @@
         {
             case 'controller':
 
-                $folder = 'controllers/';
+                $folder = 'classes/controllers/';
                 break;
 
             case 'model':
 
-                $folder = 'models/';
+                $folder = 'classes/models/';
                 break;
 
-            case 'class':
+            case 'helper':
 
-                $folder = 'libraries/classes/';
+                $folder = 'classes/helpers/';
                 break;
 
             case 'driver':
 
-                $folder = 'libraries/drivers/';
+                $folder = 'classes/drivers/';
                 break;
+
+            default:
+                die("The following class does not exist : $className.");
         }
 
         // Generate file name using this logic :
@@ -46,7 +49,7 @@
         {
             if (file_exists($file))
             {
-                break;
+                break; // Exit once file is found
             }
             else
             {
