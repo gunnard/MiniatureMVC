@@ -1,9 +1,8 @@
 <?php
-   /**
+    /**
     * The vendors_model will handle all the business logic for the vendors_controller
     */
-
-    class Sales_vendor_model extends Master_model
+    class Sales_vendor_model extends Common_master_model
     {
         /**
          * Fetch a vendor from it's id
@@ -25,9 +24,9 @@
             // Prepare parameters to bind to the query, they must be in the same order as the query
             $params[] = array("name" => "id", "type" => "i", "value" => $vendorId);
 
-            $this->dataConnection->prepare($query, $params); // Prepare query
+            $this->config['data_connection']->prepare($query, $params); // Prepare query
 
-            $vendor = $this->dataConnection->fetch('array', true); // Fetch a single record from the database
+            $vendor = $this->config['data_connection']->fetch('array', true); // Fetch a single record from the database
 
             return $vendor;
         }

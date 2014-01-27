@@ -1,10 +1,10 @@
 <?php
 
-    /**
-    * Creator: Dany Caissy
-    * Created on : 13-10-03
-    * Description : Add all configuration here
-    */
+    // If the first parameter isn't there, throw a 404 page
+    if (!isset($_GET['section']))
+    {
+        pageBroken();
+    }
 
     $section = $_GET['section'];
     $subSection = $_GET['subsection'];
@@ -25,10 +25,12 @@
     // Get the name of the controller class
     $myClassName = $section . '_' . $subSection .  "_controller";
 
+    /* @var $controller common_master_controller */
     // Instantiate the class with the dynamic class name
-    $controller = new $myClassName($dataConnection);
+    $controller = new $myClassName($config);
 
     // Once we have the controller instantiated, execute the default function
     // Pass any GET variables to the main method
     $controller->callAction($params);
+
 ?>

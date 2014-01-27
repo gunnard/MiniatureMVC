@@ -11,17 +11,7 @@
     require_once('autoload.php'); // Autoload classes in their respective root directory
     require_once('classes/helpers/base_helper.php'); // Base functions
 
-    // Database connection
-    $connectionInfo = array(
-        "host" => "127.0.0.1",
-        "user" => "root",
-        "password" => "root",
-        "database" => "miniatureMVC",
-        "port" => null,
-        "socket" => null
-    );
-
-    $dataConnection = new MysqlImproved_Driver();
-    $dataConnection->connect($connectionInfo);
-
+    // Get the config (including the database connection
+    $configModel = new Common_config_model();
+    $config = $configModel->getConfig();
 

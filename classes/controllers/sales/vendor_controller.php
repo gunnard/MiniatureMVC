@@ -3,7 +3,7 @@
     /**
      * This file handles the retrieval and serving of vendors
      */
-    class Sales_vendor_controller extends Master_controller
+    class Sales_vendor_controller extends Common_master_controller
     {
         /* @var $vendorsModel sales_vendor_model */
         private $vendorsModel;
@@ -13,24 +13,10 @@
             parent::__construct($dataConnection);
 
             // This is the specific layout we are using
-            $this->layoutController = new Layouts_general_controller($this->dataConnection);
+            $this->layoutController = new Common_layouts_general_controller($this->config);
 
             // Initialize the models
-            $this->vendorsModel = new sales_vendor_model($this->dataConnection);
-        }
-
-        /**
-         * This is the default function that will be called by router.php
-         * It will call a function with the name given in the action parameter
-         * EX: vendors/view/1 will call Vendors_controller's view function with p1=1
-         * @param $params The GET variables (action, p1, p2)
-         */
-        public function callAction($params)
-        {
-            if ($params['action'])
-            {
-                $this->{$params['action']}($params);
-            }
+            $this->vendorsModel = new sales_vendor_model($this->config);
         }
 
         /**
@@ -39,7 +25,11 @@
          */
         public function view($params)
         {
-            $vendorId = $params[1]; // In this context, the first parameter is the vendorId
+            if (isset($params[1])) // If the vendorId is sent in parameters
+            {
+                $vendorId = $params[1];
+            }
+            else pageBroken();
 
             // ================== Get the data
 
@@ -47,7 +37,7 @@
 
             // ================== Get the views and set their variables
 
-            $vendorsAddViewModel = new View_Model('sales/vendors_view');  // Pass the view folder and name to the template
+            $vendorsAddViewModel = new Common_view_Model('/sales/vendors');  // Pass the view folder and name to the template
             $vendorsAddViewModel->assign('vendorId' , $vendorId); // Assign a variable
             $vendorsAddViewModel->assign('vendor' , $vendor); // Assign a variable
 

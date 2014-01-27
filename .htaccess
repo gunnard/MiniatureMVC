@@ -17,19 +17,18 @@ AddHandler cgi-script .pl .cgi
 Options +ExecCGI +FollowSymLinks
 
 #------------------------------------------------------------------------------
-# Activate this section to use the Private Server Feature!
-# Defaults: Username - root; Password - root
-# Note AuthUserFile: File path is relative to server root
-# To lock server, uncomment the next 4 lines. (A name and password is required)
+# URL rewriting
 #------------------------------------------------------------------------------
-
-#AuthName "Uniform Server - Server Access"
-#AuthType Basic
-#AuthUserFile ../../../htpasswd/www/.htpasswd
-#Require valid-user
 
 RewriteEngine on
 RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ index.php?section=$1&subsection=$2&action=$3 [L]
 RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ index.php?section=$1&subsection=$2&action=$3&p1=$4 [L]
 RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ index.php?section=$1&subsection=$2&action=$3&p1=$4&p2=$5 [L]
 RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ index.php?section=$1&subsection=$2&action=$3&p1=$4&p2=$5&p3=$6 [L]
+
+#------------------------------------------------------------------------------
+# Error management
+#------------------------------------------------------------------------------
+
+# If there is a 404 error, redirect to index
+ErrorDocument 404 /MiniatureMVC/index.php

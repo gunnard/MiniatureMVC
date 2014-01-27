@@ -66,6 +66,14 @@
         }
         else
         {
-            die("File '$folder$filename' containing class '$className' not found.");
+            // Page not found
+            if (strtolower($suffix))
+            {
+                pageBroken();
+            }
+            else // Class not found
+            {
+                die("File '{$folder}{$filename}_{$suffix}' containing class '$className' not found.");
+            }
         }
     }

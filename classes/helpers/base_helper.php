@@ -38,3 +38,14 @@
             return false;
         }
     }
+
+    // ================== Controller related functions
+
+    /**
+     * Redirect to the broken page (404)
+     */
+    function pageBroken()
+    {
+        $controller = new Common_errors_broken_controller();
+        $controller->callAction("view");
+    }

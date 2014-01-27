@@ -3,17 +3,36 @@
      * Basic class for all controllers
      */
 
-    class Master_controller
+    class Common_master_controller
     {
         // Defines the layout of the page (header and footer)
         // If not applicable, don't set it in the constructor
         protected $layoutController;
 
-        protected $dataConnection;
+        protected $config; // Contains the config and the database connection
 
-        public function __construct($dataConnection)
+        public function __construct($config = null)
         {
-            $this->dataConnection = $dataConnection;
+            $this->config = $config;
+        }
+
+        /**
+         * This is the default function that will be called by router.php
+         * It will call a function with the name given in the action parameter
+         * EX: vendors/view/1 will call Vendors_controller's view function with p1=1
+         * @param $params
+         */
+
+        public function callAction($params)
+        {
+            if (isset($params['action']))
+            {
+                $this->{$params['action']}($params);
+            }
+            else // The param may directly be the action
+            {
+                $this->{$params}();
+            }
         }
 
         /**
@@ -37,6 +56,7 @@
                 $this->layoutController->footer();
             }
         }
+
     }
 
 ?>
