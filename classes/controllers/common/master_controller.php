@@ -22,16 +22,19 @@
          * EX: vendors/view/1 will call Vendors_controller's view function with p1=1
          * @param $params
          */
-
         public function callAction($params)
         {
             if (isset($params['action']))
             {
                 $this->{$params['action']}($params);
             }
-            else // The param may directly be the action
+            else if ($params) // The param may directly be the action
             {
                 $this->{$params}();
+            }
+            else // If there are no subsections, call the index method
+            {
+                $this->index();
             }
         }
 
