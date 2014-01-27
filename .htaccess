@@ -21,6 +21,8 @@ Options +ExecCGI +FollowSymLinks
 #------------------------------------------------------------------------------
 
 RewriteEngine on
+RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ index.php?section=$1 [L]
+RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ index.php?section=$1&subsection=$2 [L]
 RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ index.php?section=$1&subsection=$2&action=$3 [L]
 RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ index.php?section=$1&subsection=$2&action=$3&p1=$4 [L]
 RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ index.php?section=$1&subsection=$2&action=$3&p1=$4&p2=$5 [L]
