@@ -22,7 +22,7 @@
          * EX: vendors/view/1 will call Vendors_controller's view function with p1=1
          * @param $params
          */
-        public function callAction($params)
+        public function callAction($params = null)
         {
             if (isset($params['action']))
             {
