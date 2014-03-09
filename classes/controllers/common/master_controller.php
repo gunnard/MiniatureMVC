@@ -40,13 +40,21 @@
                 }
                 else pageBroken();
             }
+<<<<<<< HEAD
             else // If there are no actions, call the index method
+=======
+            else if ($params) // The param may directly be the action
+>>>>>>> f2ba8ff11d8035e660a1476536d7e75ce670e566
             {
                 if (method_exists($this, 'index'))
                 {
                     $this->index();
                 }
                 else pageBroken();
+            }
+            else // If there are no subsections, call the index method
+            {
+                $this->index();
             }
         }
 

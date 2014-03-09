@@ -8,7 +8,7 @@ Most PHP frameworks come with a lot of functionality, are very flexible and exte
 
 The truth is, 90% of the time, these goodies really aren't necessary and all they do is distract us from our actual goal; adding usable functionality to our application.
 
-MiniatureMVC attempts to simplify the development process by ensuring you avoid configuration hell, useless bloat and unnecessary performance issues. This way, you can focus on 
+MiniatureMVC attempts to simplify the development process by ensuring you avoid configuration hell, useless bloat and unnecessary performance issues. This way, you can focus on your production goals entirely.
 
 Features and benefits
 ---------------------
