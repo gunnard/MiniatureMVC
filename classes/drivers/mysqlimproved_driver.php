@@ -118,20 +118,44 @@
             return false;
         }
 
+        /*
+        * Run a query directly without expecting a result
+        * @param $query
+        * @param $params
+        * @return bool
+        */
+        public function run($query, $params = null)
+        {
+            if ($params)
+            {
+                $this->prepare($query, $params);
+                return $this->execute();
+            }
+            else
+            {
+                if (!$this->connection->query($query))
+                {
+                    die("Run() failed : " . $this->connection->error);
+                }
+
+                $this->lastInsertId = $this->connection->insert_id;
+            }
+        }
+
         /**
          * Execute and fetch the result from the prepared statement
          * @param string $type
          * @param bool $singleResult
          * @return bool
          */
-        public function fetch($type = 'array', $singleResult = false)
+        public function fetch($singleResult = false, $type = 'array')
         {
             $result = null;
 
             $this->execute();
-            $result = $this->preparedQuery->get_result();
+            $mysqlResult = $this->preparedQuery->get_result();
 
-            if (isset($result))
+            if (isset($mysqlResult))
             {
                 switch ($type)
                 {
@@ -140,11 +164,11 @@
                         // If our query is aimed at selecting a single result (select by id)
                         if ($singleResult)
                         {
-                            $result = $result->fetch_assoc();
+                            $result = $mysqlResult->fetch_assoc();
                         }
                         else // Fetch a row as an array
                         {
-                            while ($row = $result->fetch_assoc())
+                            while ($row = $mysqlResult->fetch_assoc())
                             {
                                 $result[] = $row;
                             }
@@ -156,11 +180,11 @@
 
                         if ($singleResult)
                         {
-                            $result = $result->fetch_object();
+                            $result = $mysqlResult->fetch_object();
                         }
                         else // Fetch a row as an array
                         {
-                            while ($row = $result->fetch_object())
+                            while ($row = $mysqlResult->fetch_object())
                             {
                                 $result[] = $row;
                             }

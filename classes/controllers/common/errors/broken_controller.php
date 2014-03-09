@@ -31,8 +31,6 @@
             $errorsBrokenViewModel->render(); // Display the vendor view
 
             parent::displayFooter(); // Page footer
-
-            exit; // Exit as to not continue with the normal process
         }
     }
 

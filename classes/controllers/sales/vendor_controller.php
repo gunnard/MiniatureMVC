@@ -5,12 +5,11 @@
      */
     class Sales_vendor_controller extends Common_master_controller
     {
-        /* @var $vendorsModel sales_vendor_model */
         private $vendorsModel;
 
-        public function __construct($dataConnection)
+        public function __construct($config)
         {
-            parent::__construct($dataConnection);
+            parent::__construct($config);
 
             // This is the specific layout we are using
             $this->layoutController = new Common_layouts_general_controller($this->config);

@@ -48,4 +48,9 @@
     {
         $controller = new Common_errors_broken_controller();
         $controller->callAction("view");
+        exit;
     }
+
+
+
+

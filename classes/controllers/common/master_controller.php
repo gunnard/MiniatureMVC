@@ -22,16 +22,31 @@
          * EX: vendors/view/1 will call Vendors_controller's view function with p1=1
          * @param $params
          */
-
-        public function callAction($params)
+        public function callAction($params = null)
         {
             if (isset($params['action']))
             {
-                $this->{$params['action']}($params);
+                if (method_exists($this, $params['action']))
+                {
+                    $this->{$params['action']}($params);
+                }
+                else pageBroken();
             }
-            else // The param may directly be the action
+            else if ($params) // The param may directly be the action
             {
-                $this->{$params}();
+                if (method_exists($this, $params))
+                {
+                    $this->{$params}();
+                }
+                else pageBroken();
+            }
+            else // If there are no actions, call the index method
+            {
+                if (method_exists($this, 'index'))
+                {
+                    $this->index();
+                }
+                else pageBroken();
             }
         }
 

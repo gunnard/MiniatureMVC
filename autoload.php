@@ -40,7 +40,7 @@
         }
 
         // Generate file name using this logic :
-        // "model" . "sales/vendor" . '_' . "model.php"
+        // "classes/models/" . "sales/vendor" . '_' . "model.php"
         $file = $folder . strtolower($filename . '_' . $suffix) . '.php';
 
         // If there are underscores, the file may contain an underscore OR is in a folder

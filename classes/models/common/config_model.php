@@ -35,8 +35,8 @@
         {
             $connectionInfo = array(
                 "host" => "127.0.0.1",
-                "user" => "root",
-                "password" => "root",
+                "user" => "user",
+                "password" => "user",
                 "database" => "miniatureMVC",
                 "port" => null,
                 "socket" => null

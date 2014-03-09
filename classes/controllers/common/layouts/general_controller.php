@@ -5,17 +5,22 @@
      */
     class Common_layouts_general_controller extends Common_master_controller
     {
+        function __construct($config)
+        {
+            parent::__construct($config);
+        }
+
         /**
          * Display the header
          * @param $title
          */
         public function header($title)
         {
-            $vendorsAddViewModel = new Common_view_Model('/common/layouts/general_header');
+            $generalHeaderViewModel = new Common_view_model('/common/layouts/general_header');
 
-            $vendorsAddViewModel->assign('title' , $title);
+            $generalHeaderViewModel->assign('title' , $title);
 
-            $vendorsAddViewModel->render();
+            $generalHeaderViewModel->render();
         }
 
         /**
@@ -23,14 +28,14 @@
          */
         public function footer()
         {
-            $vendorsAddViewModel = new Common_view_Model('/common/layouts/general_footer');
+            $generalFooterViewModel = new Common_view_model('/common/layouts/general_footer');
 
             // Get the current date from the date class
             $dateHelper = new date_helper();
             $currentDate = $dateHelper->getCurrentDate();
-            $vendorsAddViewModel->assign('current_date' , $currentDate);
+            $generalFooterViewModel->assign('current_date' , $currentDate);
 
-            $vendorsAddViewModel->render();
+            $generalFooterViewModel->render();
         }
     }
 

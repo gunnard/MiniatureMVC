@@ -26,7 +26,7 @@
 
             $this->config['data_connection']->prepare($query, $params); // Prepare query
 
-            $vendor = $this->config['data_connection']->fetch('array', true); // Fetch a single record from the database
+            $vendor = $this->config['data_connection']->fetch(true); // Fetch a single record from the database
 
             return $vendor;
         }

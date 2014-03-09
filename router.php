@@ -1,7 +1,13 @@
 <?php
 
-    // If the first parameter isn't there, throw a 404 page
+    // If this is the initial root page
     if (!isset($_GET['section']))
+    {
+        // Redirect to your login page here
+    }
+
+    // There's no subsection
+    if (!isset($_GET['subsection']))
     {
         pageBroken();
     }
