@@ -6,7 +6,7 @@ Intro
 
 Most PHP frameworks come with a lot of functionality, are very flexible and extensible and can be configured to behave in tons of ways. However, all this flexibility comes at a price, these frameworks become hard to configure, they are bloated with functions that only very few people need and they slow down the page loads because of all the functionality they need to include.
 
-The truth is, 90% of the time, these goodies really aren't necessary and all they do is distract us from our actual goal; adding usable functionality to our application.
+The truth is, most of the time, these goodies really aren't necessary and all they do is distract us from our actual goal; adding usable functionality to our application.
 
 MiniatureMVC attempts to simplify the development process by ensuring you avoid configuration hell, useless bloat and unnecessary performance issues. This way, you can focus on your production goals entirely.
 
@@ -31,7 +31,7 @@ Installation
 Configuration
 -------------
 
-Change the database information in /classes/models/common/config_model.php.
+Change the database credentials in /classes/models/common/config_model.php.
 
 If you wish to try the test page for the framework, you will need to run the init.sql file on your database.
 
